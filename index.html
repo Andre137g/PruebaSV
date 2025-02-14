@@ -74,7 +74,9 @@
     <button class="reveal-btn" onclick="revealMessage('msg3')">Mensaje 3</button>
     <p id="msg3" class="hidden-message">No veo la hora de estar contigo y abrazarte fuerte 🤗</p>
     
-    <iframe width="0" height="0" src="https://www.youtube.com/embed/tyKu0uZS86Q?autoplay=1&loop=1&playlist=tyKu0uZS86Q" frameborder="0" allow="autoplay"></iframe>
+   <!-- Botón para activar la música -->
+    <button class="reveal-btn" onclick="playMusic()">Reproducir Canción 🎶</button>
+    <iframe id="youtubeAudio" width="0" height="0" src="https://www.youtube.com/embed/tyKu0uZS86Q?enablejsapi=1" frameborder="0" allow="autoplay"></iframe>
     
     <script>
         function revealMessage(id) {
@@ -84,6 +86,11 @@
             } else {
                 message.classList.remove("show");
             }
+        }
+        
+        function playMusic() {
+            var iframe = document.getElementById("youtubeAudio");
+            iframe.src += "&autoplay=1";
         }
     </script>
 </body>
